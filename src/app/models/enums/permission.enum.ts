@@ -7,6 +7,7 @@ export enum PERMISSION {
   // -----------------------------------------------------
   READ_DASHBOARD = 'READ_DASHBOARD',
 }
+
 /**
  * @NOTE: Search by key: 'MAIN'
  */

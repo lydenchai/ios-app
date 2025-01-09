@@ -1,24 +1,33 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LoadingService {
-  isLoading = false;
-  loadingEventEmitter: EventEmitter<boolean> = new EventEmitter();
-  private _tasks = 0;
+  private _isLoading = false;
+  private _isLoading$ = new BehaviorSubject(false);
+  isLoading$: Observable<boolean> = this._isLoading$;
+  counter = 0;
 
-  constructor() {}
+  constructor() { 
+  }
 
   setLoading(isLoading: boolean) {
     if (isLoading) {
-      this._tasks++;
+      this.counter++;
     } else {
-      if (this._tasks > 0) {
-        this._tasks--;
-      }
+      this.counter = this.counter - 1 < 0 ? 0 : this.counter - 1;
     }
-    isLoading = this._tasks > 0;
-    this.loadingEventEmitter.emit(isLoading);
+    this._isLoading = this.counter > 0;
+    this._isLoading$.next(this._isLoading);
   }
+  
+
+  forceStop() {
+    this.counter = 0;
+    this._isLoading = false;
+    this._isLoading$.next(this._isLoading);
+  }
+
 }

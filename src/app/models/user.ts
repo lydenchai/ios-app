@@ -14,7 +14,6 @@ export interface User {
   username: string;
   phone_number: string;
   email: string;
-  personal_code: string;
   role: IRole;
   password?: string;
   gender?: string;
