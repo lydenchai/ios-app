@@ -1,23 +1,52 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ContainerComponent } from './components/container/container.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: ContainerComponent,
+    children: [
+      {
+        path: 'categories',
+        loadChildren: () =>
+          import('./routes/category/category.module').then(
+            (m) => m.CategoryPageModule
+          ),
+      },
+      {
+        path: 'profile',
+        loadChildren: () =>
+          import('./routes/profile/profile.module').then(
+            (m) => m.ProfilePageModule
+          ),
+      },
+      {
+        path: 'notification',
+        loadChildren: () =>
+          import('./routes/notification/notification.module').then(
+            (m) => m.NotificationPageModule
+          ),
+      },
+      {
+        path: '',
+        redirectTo: 'categories',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
+    path: '**',
+    redirectTo: '',
     pathMatch: 'full',
   },
   {
-    path: 'home',
+    path: 'category',
     loadChildren: () =>
-      import('./routes/home/home.module').then((m) => m.HomePageModule),
+      import('./routes/category/category.module').then(
+        (m) => m.CategoryPageModule
+      ),
   },
-  {
-    path: 'about',
-    loadChildren: () =>
-      import('./routes/about/about.module').then((m) => m.AboutPageModule),
-  },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({
