@@ -8,6 +8,11 @@ const routes: Routes = [
     component: ContainerComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'categories',
+        pathMatch: 'full',
+      },
+      {
         path: 'categories',
         loadChildren: () =>
           import('./routes/category/category.module').then(
@@ -27,11 +32,6 @@ const routes: Routes = [
           import('./routes/notification/notification.module').then(
             (m) => m.NotificationPageModule
           ),
-      },
-      {
-        path: '',
-        redirectTo: 'categories',
-        pathMatch: 'full',
       },
     ],
   },
