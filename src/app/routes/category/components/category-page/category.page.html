@@ -1,14 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>category</ion-title>
+    <ion-title>Category</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">category</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content> -->
-<div>Categories</div>
+<ion-content [fullscreen]="true">
+  <ion-grid class="travel">
+    <ion-row>
+      <ion-col class="travel">
+        <ion-button size="small" color="primary" expand="block" (click)="navigateTo('travel-list')">
+          TRAVEL
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="fashion-food">
+    <ion-row>
+      <ion-col class="fashion">
+        <ion-button size="small" color="tertiary">FASHION</ion-button>
+      </ion-col>
+      <ion-col class="food">
+        <ion-button size="small" color="secondary">FOOD</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="deals">
+    <ion-row>
+      <ion-col class="deals">
+        <ion-button size="small" color="medium">DEALS</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="real-estate">
+    <ion-row>
+      <ion-col class="real-estate">
+        <ion-button size="small" color="danger">REAL ESTATE</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
