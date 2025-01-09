@@ -1,0 +1,55 @@
+ion-col {
+  margin: 5px;
+}
+
+ion-grid {
+  width: 100%;
+  height: 100%;
+}
+
+ion-grid:first-of-type {
+  height: 35%;
+}
+
+ion-grid:nth-of-type(2),
+ion-grid:nth-of-type(3),
+ion-grid:nth-of-type(4) {
+  height: 21%;
+}
+
+ion-row {
+  height: 100%;
+}
+
+ion-col {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ion-col.travel {
+  background-image: url("../../../../../assets/images/travel.png");
+}
+
+ion-col.fashion {
+  background-image: url("../../../../../assets/images/fashion.png");
+}
+
+ion-col.food {
+  background-image: url("../../../../../assets/images/food.png");
+}
+
+ion-col.deals {
+  background-image: url("../../../../../assets/images/deal.png");
+}
+
+ion-col.real-estate {
+  background-image: url("../../../../../assets/images/real-estate.png");
+}
