@@ -13,17 +13,17 @@
 @import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+// @import "@ionic/angular/css/normalize.css";
+// @import "@ionic/angular/css/structure.css";
+// @import "@ionic/angular/css/typography.css";
+// @import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+// @import "@ionic/angular/css/padding.css";
+// @import "@ionic/angular/css/float-elements.css";
+// @import "@ionic/angular/css/text-alignment.css";
+// @import "@ionic/angular/css/text-transformation.css";
+// @import "@ionic/angular/css/flex-utils.css";
 
 /**
  * Ionic Dark Mode
@@ -34,4 +34,15 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Force light mode by setting background and text colors */
+/* Force light mode */
+:root {
+  --ion-background-color: white; /* Light background color */
+  --ion-text-color: black; /* Light text color */
+  --ion-toolbar-background: white; /* Light toolbar background */
+  --ion-toolbar-color: black; /* Light toolbar text color */
+  --ion-item-background: white; /* Light item background */
+  --ion-item-color: black; /* Light item text color */
+}
