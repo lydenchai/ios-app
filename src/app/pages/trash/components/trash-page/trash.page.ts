@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { IonHeader, IonContent } from '@ionic/angular/standalone';
@@ -10,7 +11,15 @@ import { IonHeader, IonContent } from '@ionic/angular/standalone';
   imports: [IonicModule],
 })
 export class TrashPage implements OnInit {
-  constructor() {}
+  isSmallScreen: boolean = false;
 
-  ngOnInit() {}
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit(): void {
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.XSmall])
+      .subscribe((result) => {
+        this.isSmallScreen = result.matches;
+      });
+  }
 }

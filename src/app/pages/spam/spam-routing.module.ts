@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SpamPage } from './spam.page';
+import { SpamPage } from './components/spam-page/spam.page';
 
 const routes: Routes = [
   {

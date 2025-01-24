@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { TrashPageRoutingModule } from './trash-routing.module';
-import { TrashPage } from './trash.page';
+import { TrashPage } from './components/trash-page/trash.page';
 
 @NgModule({
   imports: [

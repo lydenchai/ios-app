@@ -5,32 +5,32 @@ const routes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
-      import('./pages/home/home.page').then((m) => m.HomePage),
+      import('./pages/home/components/home-page/home.page').then((m) => m.HomePage),
   },
   {
     path: 'category',
     loadComponent: () =>
-      import('./pages/category/category.page').then((m) => m.CategoryPage),
+      import('./pages/category/components/category-page/category.page').then((m) => m.CategoryPage),
   },
   {
     path: 'favorites',
     loadComponent: () =>
-      import('./pages/favorites/favorites.page').then((m) => m.FavoritesPage),
+      import('./pages/favorites/components/favorites-page/favorites.page').then((m) => m.FavoritesPage),
   },
   {
     path: 'archived',
     loadComponent: () =>
-      import('./pages/archived/archived.page').then((m) => m.ArchivedPage),
+      import('./pages/archived/components/acrhived-page/archived.page').then((m) => m.ArchivedPage),
   },
   {
     path: 'trash',
     loadComponent: () =>
-      import('./pages/trash/trash.page').then((m) => m.TrashPage),
+      import('./pages/trash/components/trash-page/trash.page').then((m) => m.TrashPage),
   },
   {
     path: 'spam',
     loadComponent: () =>
-      import('./pages/spam/spam.page').then((m) => m.SpamPage),
+      import('./pages/spam/components/spam-page/spam.page').then((m) => m.SpamPage),
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {

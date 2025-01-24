@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
   standalone: false,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Category', url: '/category', icon: 'grid' },
@@ -16,10 +17,22 @@ export class AppComponent {
     { title: 'Trash', url: '/trash', icon: 'trash' },
     { title: 'Spam', url: '/spam', icon: 'warning' },
   ];
+  isSmallScreen: boolean = false;
 
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, private breakpointObserver: BreakpointObserver) {
+    this.initializeApp();
+  }
+
+  ngOnInit(): void {
+    this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.XSmall])
+      .subscribe((result) => {
+        this.isSmallScreen = result.matches;
+      });
+  }
+
+  initializeApp(): void {
     this.platform.ready().then(() => {
-      // Disable dark mode detection
       document.body.classList.remove('dark');
     });
   }
