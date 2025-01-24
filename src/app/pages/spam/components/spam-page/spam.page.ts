@@ -1,4 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
@@ -7,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './spam.page.html',
   styleUrls: ['./spam.page.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, CommonModule],
 })
 export class SpamPage implements OnInit {
   isSmallScreen: boolean = false;

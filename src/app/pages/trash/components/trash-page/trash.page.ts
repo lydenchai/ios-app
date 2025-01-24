@@ -1,4 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { IonHeader, IonContent } from '@ionic/angular/standalone';
@@ -8,7 +9,7 @@ import { IonHeader, IonContent } from '@ionic/angular/standalone';
   templateUrl: './trash.page.html',
   styleUrls: ['./trash.page.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, CommonModule],
 })
 export class TrashPage implements OnInit {
   isSmallScreen: boolean = false;

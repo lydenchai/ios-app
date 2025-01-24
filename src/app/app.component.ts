@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,18 @@ export class AppComponent implements OnInit {
     { title: 'Spam', url: '/spam', icon: 'warning' },
   ];
   isSmallScreen: boolean = false;
+  currentRoute: string = 'home';
 
-  constructor(private platform: Platform, private breakpointObserver: BreakpointObserver) {
+  constructor(
+    private platform: Platform,
+    private breakpointObserver: BreakpointObserver,
+    private router: Router
+  ) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects.substring(1);
+      }
+    });
     this.initializeApp();
   }
 
