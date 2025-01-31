@@ -7,9 +7,9 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list>
+      <ion-list lines="none">
         <ion-menu-toggle auto-hide="true" *ngFor="let page of appPages">
-          <ion-item [routerLink]="page.url" routerDirection="root" detail="false" lines="none"
+          <ion-item [routerLink]="page.url" routerDirection="root" detail="false"
             [class.active]="'/'+currentRoute === page.url">
             <ion-icon [name]="page.icon" slot="start"></ion-icon>
             <ion-label>{{ page.title }}</ion-label>
